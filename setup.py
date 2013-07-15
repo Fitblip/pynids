@@ -16,8 +16,16 @@ PKGNAME  = 'libnids-1.24'
 PKGTAR   = PKGNAME + '.tar.gz'
 BUILDDIR = PKGNAME
 
-INCLUDE_DIRS  = ['/usr/local/include', '/opt/local/include']
-LIBRARY_DIRS  = ['/usr/local/lib', '/opt/local/lib']
+
+
+INCLUDE_DIRS  = ['/usr/local/include']
+LIBRARY_DIRS  = ['/usr/local/lib']
+
+if os.path.exists('/opt/local/include'):
+    INCLUDE_DIRS.append('/opt/local/include')
+if os.path.exists('/opt/local/lib'):
+    LIBRARY_DIRS.append('/opt/local/lib')
+
 EXTRA_OBJECTS = []
 
 class nidsMaker(build):
@@ -50,10 +58,10 @@ EXTRA_OBJECTS = nidsMaker.extra_objects + EXTRA_OBJECTS
 
 setup (# Distribution meta-data
         name = "pynids",
-        version = "0.6.1",
+        version = "0.6.3",
         description = "libnids wrapper",
-        author = "Jon Oberheide",
-        author_email = "jon@oberheide.org",
+        author = "Ryan Sears",
+        author_email = "fitblip@gmail.com",
         license = "GPL",
         long_description = \
 '''pynids is a python wrapper for libnids, a Network Intrusion Detection System
@@ -72,5 +80,5 @@ port scan detection.
                             extra_objects = EXTRA_OBJECTS
                         ) 
                       ],
-        url = "http://jon.oberheide.org/pynids/",
+        url = "https://github.com/Fitblip/pynids",
       )
