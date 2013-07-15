@@ -1,6 +1,12 @@
-pynids-0.6.2
+### pynids-0.6.3
 
-http://jon.oberheide.org/pynids/
+This is a fork of the [original pynids](http://jon.oberheide.org/pynids/), currently maintained by Jon Oberheide.
+
+Differences
+===========
+This fork adds a more defined setup.py to compile a shared object for libnids since
+modern day linux distros complain about it. It also includes a patch to fix some SSL
+oddness in the SWIG bindings.
 
 Introduction
 ============
@@ -15,16 +21,6 @@ license information.
 libnids is (c) 1999 Rafal Wojtczuk <nergal@avet.com.pl> and licensed under the
 GNU GPL.  See http://www.packetfactory.net/projects/libnids/ for more
 information.
-
-Notes
-=====
-This is just a fork of the originally maintained pynids from Jon Oberheide. 
-
-Differences
-===========
-This fork adds a more defined setup.py to compile a shared object for libnids since
-modern day linux distros complain about it. It also includes a patch to fix some SSL
-oddness in the SWIG bindings. 
 
 Installation
 ============
